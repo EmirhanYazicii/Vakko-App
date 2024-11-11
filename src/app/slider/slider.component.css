@@ -1,0 +1,170 @@
+/* Slider container'ının temel stili */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+/* Slider içerik stili */
+.slider {
+  display: flex;
+  flex-direction: column; /* Alt alta sıralamak için */
+  transition: transform 0.5s ease;
+  height: calc(100vh * 10);
+}
+
+.slide {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+img, video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Görsellerin doğru şekilde sığması için */
+}
+
+/* Yuvarlak gösterge butonları sağda ve ortada */
+.round-indicators {
+  position: absolute;
+  top: 50%; /* Dikeyde ortalamak için */
+  right: 10px; /* Sağda yer alacak */
+  transform: translateY(-50%); /* Dikeyde tam ortalama için */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2; /* Slider'ın üstünde görünmesini sağlamak */
+}
+
+.indicator {
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.indicator.active {
+  background-color:white; /* Aktif baloncuk için renk */
+}
+
+.indicator:hover {
+  transform: scale(1.2); /* Hover durumunda baloncuk büyüsün */
+}
+
+.slider-container:active {
+  cursor: grabbing; /* Kaydırma sırasında fare işaretçisi */
+}
+.back-to-first-slide-btn {
+  position: absolute;
+  bottom: 20px; /* Baloncukların altına yerleştirmek için */
+  right: 10px; /* Sağda yer alacak */
+  padding: 10px 20px;
+  background-color:black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 3; /* Diğer içeriklerin üstünde görünmesini sağlar */
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-first-slide-btn[disabled] {
+  opacity: 0; /* Buton devre dışı olduğunda görünmez */
+}
+
+.back-to-first-slide-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Temel slider stillerini koruyarak, telefon ve tablet için medya sorguları ekleyelim */
+
+/* Mobil cihazlar için (max-width: 767px) */
+@media (max-width: 767px) {
+  .slider-container {
+    height: 100vh; /* Tam ekran yüksekliği */
+  }
+
+  /* Slider İçeriği */
+  .slider {
+    height: calc(100vh * 20); /* Daha az slayt için yüksekliği ayarla */
+  }
+
+  .slide {
+    height: 100vh; /* Her bir slide için yüksekliği yarıya indir */
+  }
+
+  /* Yuvarlak Gösterge Butonları */
+  .round-indicators {
+    right: 5px; /* Sağdaki mesafeyi kısalt */
+    top: 50%; /* Dikeyde ortalamaya devam et */
+    transform: translateY(-50%);
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+  }
+
+  .indicator.active {
+    background-color: white;
+  }
+
+  .back-to-first-slide-btn {
+    padding: 8px 16px;
+    bottom: 10px; /* Butonun alt konumunu kısalt */
+    right: 10px; /* Sağ konumunu koru */
+    font-size: 14px; /* Buton yazı boyutunu küçült */
+  }
+}
+
+/* Tablet cihazlar için (min-width: 768px ve max-width: 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .slider-container {
+    height: 100vh; /* Tam ekran yüksekliği */
+  }
+
+  /* Slider İçeriği */
+  .slider {
+    height: calc(100vh * 8); /* Daha fazla slayt için yüksekliği ayarla */
+  }
+
+  .slide {
+    height: 100vh; /* Her bir slaytın yüksekliği tam ekran olsun */
+  }
+
+  /* Yuvarlak Gösterge Butonları */
+  .round-indicators {
+    right: 10px; /* Sağdaki mesafeyi biraz artır */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .indicator {
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+  }
+
+  .indicator.active {
+    background-color: white;
+  }
+
+  .back-to-first-slide-btn {
+    padding: 10px 20px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 16px;
+  }
+}

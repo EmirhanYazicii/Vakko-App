@@ -1,0 +1,5 @@
+<!-- app.component.html -->
+<app-header (menuToggle)="toggleMenu($event)"></app-header> <!-- Menü açma/kapama butonu -->
+<app-menu [isMenuOpen]="isMenuOpen" (menuClose)="toggleMenu(false)"></app-menu> <!-- Menü açma/kapama durumu ile -->
+<app-slider></app-slider>
+<app-footer></app-footer>

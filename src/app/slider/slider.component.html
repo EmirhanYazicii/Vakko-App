@@ -1,0 +1,32 @@
+<div class="slider-container" (wheel)="onWheel($event)">
+
+  <!-- Slider İçeriği -->
+  <div class="slider" [ngStyle]="{ 'transform': 'translateY(' + translateY + 'vh)' }">
+    <div *ngFor="let image of images; let i = index" class="slide">
+      <!-- Eğer ilk slaytsa, video ekle -->
+      <ng-container *ngIf="i === 0">
+        <video width="100%" height="auto" controls>
+          <source [src]="image" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </ng-container>
+
+      <!-- Diğer slaytlar için görsel ekle -->
+      <ng-container *ngIf="i !== 0">
+        <img [src]="image" alt="slider image" />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Yuvarlaklar Sağ Tarafında Slider'ın Üstünde -->
+  <div class="round-indicators">
+    <div *ngFor="let image of images; let i = index"
+         class="indicator"
+         [ngClass]="{ active: currentIndex === i }"
+         (click)="goToSlide(i)"> <!-- Baloncuğa tıklanıldığında goToSlide fonksiyonu tetiklenir -->
+    </div>
+  </div>
+  <button *ngIf="currentIndex !== 0" (click)="goToFirstSlide()" class="back-to-first-slide-btn">
+    ↑
+  </button>
+</div>

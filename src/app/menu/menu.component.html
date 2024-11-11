@@ -1,0 +1,382 @@
+<div [class.open]="isMenuOpen" class="sideMenu" id="sideMenu">
+  <button id="closeButton" class="close-button" (click)="closeMenu()">X</button>
+  <ul class="menu-list">
+   <li (mouseenter)="showSubMenuAndImage('https://cdn.vakko.com/banners/2fd213c0-5aea-4851-931a-3a5f493112f3.jpeg')"
+    (mouseleave)="hideSubMenuAndImage()"
+    >Kadın
+      <div class="sub-menu">
+        <ul>
+          <li>GİYİM
+            <ul>
+              <li>Dış Giyim</li>
+              <li>Elbise & Tulum</li>
+              <li>Ceket</li>
+              <li>Gömlek & Bluz</li>
+              <li>Triko</li>
+              <li>T-Shirt & Sweatshirt</li>
+              <li>Pantolon</li>
+              <li>Etek</li>
+            </ul>
+          </li>
+          <li>AKSESUAR
+            <ul>
+              <li>Takı</li>
+              <li>Şapka</li>
+              <li>Kemer</li>
+              <li>Şal</li>
+              <li>Atkı & Bere</li>
+              <li>Eldiven</li>
+              <li>Çorap</li>
+            </ul>
+          </li>
+          <li>EŞARP & ŞAL KOLEKSİYONU
+            <ul>
+              <li>Eşarp</li>
+              <li>Şal</li>
+              <li>Fular & Gavroş & Bandana</li>
+              <li>Çağdaş Türk Sanatçıları Koleksiyonu</li>
+              <li>İsme Özel Eşarp</li>
+              <li>Kendi Eşarbını Tasarla</li>
+            </ul>
+          </li>
+          <li>11.11 Özel Seçili Ürünlerde Ek %11 İndirim</li>
+          <li>AW'25 LOOKBOOK</li>
+          <li>AW ’25 URBAN GLAM</li>
+          <li>AW ’25 GLAMOUR</li>
+          <li>AW ’25 SILENT CHIC</li>
+          <li>AW ’25 COOL CASUAL</li>
+          <li>Seçili Sezon Ürünlerinde Karta Ek +%10 İndirim</li>
+          <li>5000 TL ÜZERİ SEÇİLİ ÜRÜNLERDE 1000 TL İNDİRİM</li>
+        </ul>
+        <img *ngIf="isImageVisible" [src]="hoveredImageUrl" [ngStyle]="{'position': 'fixed', 'right': '0', 'top': '50%', 'transform': 'translateY(-50%)'}" class="hover-image">
+      </div>
+    </li>
+      <li (mouseenter)="showSubMenuAndImage('https://cdn.vakko.com/banners/c7b46bb1-dcb6-4a9b-a736-15eb5fb67b37.jpeg')"
+      (mouseleave)="hideSubMenuAndImage()">Erkek
+        <div class="sub-menu">
+          <ul>
+            <li>GİYİM
+              <ul>
+                <li>Dış Giyim
+                  <ul>
+                    <li>Ceket</li>
+                    <li>Takım Elbise</li>
+                    <li>Smokin</li>
+                  </ul>
+                </li>
+                <li>Gömlek</li>
+                <li>T-Shirt & Sweatshirt</li>
+                <li>Triko</li>
+                <li>Pantolon</li>
+                <li>İç Giyim</li>
+              </ul>
+            </li>
+            <li>AKSESUAR
+              <ul>
+                <li>Kravat</li>
+                <li>Mendil</li>
+                <li>Papyon</li>
+                <li>Kemer</li>
+                <li>Çorap</li>
+                <li>Bileklik</li>
+                <li>Kol Düğmesi</li>
+                <li>Şapka</li>
+                <li>Kaşkol</li>
+                <li>Eldiven</li>
+              </ul>
+            </li>
+            <li>11.11 Özel Seçili Ürünlerde Ek %11 İndirim</li>
+            <li>AW'25 LOOKBOOK</li>
+            <li>Seçili Sezon Ürünlerinde Karta Ek +%10 İndirim</li>
+            <li>5000 TL ÜZERİ SEÇİLİ ÜRÜNLERDE 1000 TL İNDİRİM</li>
+          </ul>
+          <img *ngIf="isImageVisible" [src]="hoveredImageUrl" [ngStyle]="{'position': 'fixed', 'right': '0', 'top': '50%', 'transform': 'translateY(-50%)'}" class="hover-image">
+        </div>
+      </li>
+      <li (mouseenter)="showSubMenuAndImage('https://cdn.vakko.com/banners/984350c5-65a5-4488-b82d-dd929ef452da.jpeg')"
+      (mouseleave)="hideSubMenuAndImage()">Shoes & Bags
+        <div class="sub-menu">
+          <ul>
+            <li>Ayakkabı</li>
+            <li>Çanta</li>
+            <li>Cüzdan</li>
+            <li>V2K Designers Ayakkabı & Çanta</li>
+            <li>Monogram
+              <ul>
+                <li>Monogram Initials Koleksiyonu</li>
+              </ul>
+            </li>
+          </ul>
+          <img *ngIf="isImageVisible" [src]="hoveredImageUrl" [ngStyle]="{'position': 'fixed', 'right': '0', 'top': '50%', 'transform': 'translateY(-50%)'}" class="hover-image">
+        </div>
+      </li>
+      <li (mouseenter)="showSubMenuAndImage('https://cdn.vakko.com/banners/72674061-9fc1-41ed-823d-4f7baaa15a94.jpeg')"
+      (mouseleave)="hideSubMenuAndImage()">V2K DESIGNERS
+        <div class="sub-menu">
+          <ul>
+            <li>Giyim
+              <ul>
+                <li>Dış Giyim</li>
+                <li>Elbise & Tulum</li>
+                <li>Total Look</li>
+                <li>Ceket</li>
+                <li>Gömlek</li>
+                <li>Bluz</li>
+                <li>T-Shirt</li>
+                <li>Sweatshirt</li>
+                <li>Triko</li>
+                <li>Pantolon & Jean Pantolon</li>
+                <li>Etek</li>
+                <li>Bermuda & Şort</li>
+                <li>İç Giyim</li>
+              </ul>
+            </li>
+            <li>Ayakkabı & Çanta</li>
+            <li>Aksesuar</li>
+            <li>AW'25 LOOKBOOK</li>
+            <li>11.11 Özel Seçili Ürünlerde Ek %11 İndirim</li>
+            <li>Seçili Sezon Ürünlerinde Karta Ek +%10 İndirim</li>
+          </ul>
+          <img *ngIf="isImageVisible" [src]="hoveredImageUrl" [ngStyle]="{'position': 'fixed', 'right': '0', 'top': '50%', 'transform': 'translateY(-50%)'}" class="hover-image">
+        </div>
+      </li>
+
+    <li (mouseenter)="showSubMenuAndImage('https://cdn.vakko.com/banners/3ab0ad0a-9074-4651-b967-1176eae44d9f.jpeg')"
+    (mouseleave)="hideSubMenuAndImage()">COUTURE
+      <div class="sub-menu">
+        <ul>
+          <li>Elbise
+            <ul>
+              <li>Kokteyl Elbise</li>
+            </ul>
+          </li>
+          <li>Aksesuar</li>
+          <li>11.11 Özel Seçili Ürünlerde Ek %11 İndirim</li>
+          <li>Seçili Sezon Ürünlerinde Karta Ek +%10 İndirim</li>
+        </ul>
+        <img *ngIf="isImageVisible" [src]="hoveredImageUrl" [ngStyle]="{'position': 'fixed', 'right': '0', 'top': '50%', 'transform': 'translateY(-50%)'}" class="hover-image">
+      </div>
+    </li>
+
+    <li>WEDDING</li>
+    <li (mouseenter)="showSubMenuAndImage('https://cdn.vakko.com/banners/127420ac-70af-47c4-9df6-5f3505bea674.jpeg')"
+    (mouseleave)="hideSubMenuAndImage()">
+      Home
+      <div class="sub-menu">
+        <ul>
+          <li>EV DEKORASYONU
+            <ul>
+              <li>Mobilya</li>
+              <li>Ofis Aksesuarları</li>
+              <li>Dekoratif Ev Aksesuarları</li>
+              <li>Hobi Aksesuarları</li>
+              <li>Sofra</li>
+              <li>Mum & Oda Kokusu</li>
+              <li>Banyo Aksesuarları</li>
+            </ul>
+          </li>
+          <li>EV TEKSTİLİ
+            <ul>
+              <li>Exclusive Line</li>
+              <li>Yatak Tekstili</li>
+              <li>Masa Tekstili</li>
+              <li>Banyo Tekstili</li>
+            </ul>
+          </li>
+          <li>YILBAŞI
+            <ul>
+              <li>Yılbaşı Ağacı</li>
+              <li>Yılbaşı Süsü</li>
+              <li>Dekorasyon</li>
+              <li>Servis Aksesuarı</li>
+              <li>Yastık & Throw</li>
+            </ul>
+          </li>
+          <li>CRUISE
+            <ul>
+              <li>Tekne Aksesuarları</li>
+              <li>Dış Mekan Yastıkları</li>
+            </ul>
+          </li>
+          <li>DEKORATİF YASTIKLAR
+            <ul>
+              <li>Klasik Dekor Yastıkları</li>
+              <li>Sezon Yastıkları</li>
+            </ul>
+          </li>
+          <li>EL VE VÜCUT BAKIMI</li>
+          <li>CHRISTOFLE
+            <ul>
+              <li>Mum & Şamdan</li>
+              <li>Dekoratif Obje</li>
+              <li>Çatal & Bıçak Seti</li>
+              <li>Sofra Aksesuarları</li>
+            </ul>
+          </li>
+          <li>EVLİLİK LİSTESİ KATALOĞU</li>
+          <li>11.11 Özel Seçili Ürünlerde Ek %11 İndirim</li>
+          <li>Seçili Sezon Ürünlerinde Karta Ek +%10 İndirim</li>
+        </ul>
+        <img *ngIf="isImageVisible" [src]="hoveredImageUrl" [ngStyle]="{'position': 'fixed', 'right': '0', 'top': '50%', 'transform': 'translateY(-50%)'}" class="hover-image">
+
+      </div>
+    </li>
+
+    <li (mouseenter)="showSubMenuAndImage('https://cdn.vakko.com/banners/fe458423-bb4b-4c35-a260-ecb0945144a9.jpeg')"
+    (mouseleave)="hideSubMenuAndImage()">
+      KOZMETİK
+      <div class="sub-menu">
+        <ul>
+          <li>ERKEK PARFÜM
+            <ul>
+              <li>Infiniti For Him</li>
+              <li>Infiniti For Him 2'li Set</li>
+              <li>V De Vakko</li>
+              <li>Infiniti For Us</li>
+            </ul>
+          </li>
+          <li>KADIN PARFÜM
+            <ul>
+              <li>Infiniti For Her</li>
+              <li>Infiniti For Her Glam</li>
+              <li>Infiniti For Her Grey</li>
+              <li>Infiniti For Us</li>
+              <li>Katia</li>
+              <li>Infiniti For Her 2'li Set</li>
+              <li>Infiniti For Her 3'lü Set</li>
+              <li>Infiniti For Her Body Mist</li>
+              <li>Katia 2'li Set</li>
+            </ul>
+          </li>
+          <li>UNISEX PARFÜM
+            <ul>
+              <li>Infiniti For Us</li>
+            </ul>
+          </li>
+          <li>HEDİYE SETLERİ
+            <ul>
+              <li>Kadın Hediye Setleri</li>
+              <li>Erkek Hediye Setleri</li>
+              <li>Kolonya Hediye Setleri</li>
+            </ul>
+          </li>
+          <li>KOLONYA
+            <ul>
+              <li>Riga Amber</li>
+              <li>Bois De Cedre Atlas</li>
+              <li>Marine Imperial</li>
+              <li>Citrus</li>
+              <li>Leather</li>
+              <li>Blue Suede</li>
+              <li>Tangerine & Manderine</li>
+              <li>Atmosphere</li>
+            </ul>
+          </li>
+          <li>OJE</li>
+          <li>EL VE VÜCUT BAKIMI
+            <ul>
+              <li>Sıvı Sabunlar</li>
+              <li>Body Mist</li>
+            </ul>
+          </li>
+          <li>2 ve üzeri alışverişinizde seçili kozmetik ürünlerine %20 indirim</li>
+        </ul>
+        <img *ngIf="isImageVisible" [src]="hoveredImageUrl" [ngStyle]="{'position': 'fixed', 'right': '0', 'top': '50%', 'transform': 'translateY(-50%)'}" class="hover-image">
+
+      </div>
+    </li>
+
+    <li (mouseenter)="showSubMenuAndImage('https://cdn.vakko.com/banners/89b786af-5980-4c61-b339-e25df53b34a3.jpeg')"
+    (mouseleave)="hideSubMenuAndImage()"
+    >Vakkorama
+            <img *ngIf="isImageVisible" [src]="hoveredImageUrl" [ngStyle]="{'position': 'fixed', 'right': '0', 'top': '50%', 'transform': 'translateY(-50%)'}" class="hover-image">
+
+    </li>
+    <li>VAKKO HOTEL & RESIDENCE</li>
+    <li (mouseenter)="showSubMenuAndImage('https://cdn.vakko.com/banners/29026034-7a99-4cb7-bf9f-9772d7e1981f.jpeg')"
+    (mouseleave)="hideSubMenuAndImage()">
+      L'ATELIER
+      <div class="sub-menu">
+        <ul>
+          <li>ÇİKOLATALAR
+            <ul>
+              <li>Klasik Çikolatalar</li>
+              <li>El Yapımı Çikolatalar</li>
+              <li>Atıştırmalık Çikolatalar</li>
+            </ul>
+          </li>
+          <li>Patisserie</li>
+          <li>Delight</li>
+          <li>Ice Cream</li>
+          <li>Bistrot</li>
+        </ul>
+        <img *ngIf="isImageVisible" [src]="hoveredImageUrl" [ngStyle]="{'position': 'fixed', 'right': '0', 'top': '50%', 'transform': 'translateY(-50%)'}" class="hover-image">
+
+      </div>
+    </li>
+
+    <li (mouseenter)="showSubMenuAndImage('https://cdn.vakko.com/banners/aaeefd0a-4e2f-40ae-883d-a45f62f355f7.jpeg')"
+    (mouseleave)="hideSubMenuAndImage()">
+      OUTLET
+      <div class="sub-menu">
+        <ul>
+          <li>KADIN
+            <ul>
+              <li>Giyim</li>
+              <li>Aksesuar</li>
+              <li>Eşarp & Şal Koleksiyonu</li>
+            </ul>
+          </li>
+          <li>ERKEK
+            <ul>
+              <li>Giyim</li>
+              <li>Aksesuar</li>
+            </ul>
+          </li>
+          <li>SHOES & BAGS
+            <ul>
+              <li>Kadın</li>
+              <li>Erkek</li>
+              <li>Monogram</li>
+            </ul>
+          </li>
+          <li>COUTURE
+            <ul>
+              <li>Elbise</li>
+            </ul>
+          </li>
+          <li>V2K DESIGNERS
+            <ul>
+              <li>Kadın</li>
+              <li>Erkek</li>
+            </ul>
+          </li>
+          <li>MARE
+            <ul>
+              <li>Plaj Giyim</li>
+              <li>Mayo & Bikini</li>
+              <li>Sandalet & Terlik</li>
+              <li>Aksesuar</li>
+            </ul>
+          </li>
+          <li>HOME
+            <ul>
+              <li>Ev Dekorasyonu</li>
+              <li>Ev Tekstili</li>
+              <li>Dekoratif Yastıklar</li>
+            </ul>
+          </li>
+          <li>ÇADIR GÜNLERİ</li>
+          <li>5000 TL VE ÜZERİNE ÖZEL İNDİRİM</li>
+        </ul>
+        <img *ngIf="isImageVisible" [src]="hoveredImageUrl" [ngStyle]="{'position': 'fixed', 'right': '0', 'top': '50%', 'transform': 'translateY(-50%)'}" class="hover-image">
+
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+<div *ngIf="selectedImage">
+  <img [src]="selectedImage" alt="Selected Image" class="selected-image"/>
+</div>

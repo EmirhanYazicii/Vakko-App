@@ -1,0 +1,164 @@
+/* Side Menu */
+.sideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 190px;
+  height: 100vh; /* Yüksekliği tam ekran */
+  background-color: #f9f9f9;
+  padding: 96px 0 0 20px;
+  display: none;
+  z-index: 9999;
+}
+
+/* Menü açıldığında göster */
+.sideMenu.open {
+  display: block;
+}
+
+.sideMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menü Elemanları */
+.menu-list li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #888;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: MaisonExtended, Arial, sans-serif;
+  width: 100%;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* Menü elemanı üzerine gelindiğinde renk değişimi */
+.menu-list li:hover {
+  color: black;
+}
+
+/* Alt Menü - SideMenu ile aynı yükseklikte ve belirtilen boyutlarda */
+.sub-menu {
+  display: none;
+  position: fixed; /* Sabit konumda olacak */
+  top: 0; /* Üstten başlasın */
+  left: 190px; /* SideMenu'nin hemen sağında olacak */
+  background-color: #f9f9f9;
+  width: 544px; /* Genişlik 544px */
+  height: 613px; /* Yükseklik 613px */
+  padding: 90px 40px 40px 40px; /* Üstten 90px, sağdan soldan 40px padding */
+  overflow-y: auto; /* Kaydırma çubuğu ekle */
+}
+
+
+/* Alt Menü Elemanlarına Aşağıdan Yukarıya Animasyon Ekle */
+.menu-list li:hover > .sub-menu {
+  display: block;
+}
+
+/* Alt Menü Elemanlarının Kayarak Gelmesini Sağlayan Animasyon */
+.sub-menu li {
+  line-height: 2;
+  text-transform: unset;
+  font-family: inherit;
+  font-size: .813rem;
+  font-weight: 400;
+  color: #888;
+  opacity: 0;
+  transform: translateY(20px); /* Aşağıda başlar */
+  animation: slideUp 0.7s ease forwards;
+  animation-delay: 0.1s; /* Alt menü elemanları sırayla gelecek */
+}
+
+/* Alt Menü Elemanları Hover */
+.sub-menu li:hover {
+  color: #000;
+}
+
+.hover-image {
+  position: absolute; /* Submenü dışında bir yerde sabitleriz */
+  left: 814px; /* Submenünün hemen dışına yerleştirir */
+  top: 50%; /* Submenü ile dikeyde hizalar */
+  transform: translateY(-50%); /* Görseli tam ortalar */
+  z-index: 1000; /* Görselin diğer öğelerin üstünde olmasını sağlar */
+  animation: menuImg 1s cubic-bezier(.215,.61,.355,1) forwards;
+
+}
+@keyframes menuImg {
+  0% {
+    opacity: 0;
+    transform: translateX(20px) translateY(-50%); /* Başlangıçta sağdan kayarak gelir */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(-50%); /* Yerleştiği yer */
+  }
+}
+
+/* Aşağıdan Yukarıya Kayarak Gelme Animasyonu */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Aşağıda başlar */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Yerleşir */
+  }
+}
+
+/* Kapatma Butonu */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 1.35rem;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+}
+
+/* Kapatma Butonuna Hover Efekti */
+.close-button:hover {
+  color: #000;
+}
+
+/* Responsive - Küçük ekranlar */
+/* Responsive - Tablet Ekranları */
+/* Responsive - Tablet Ekranları */
+/* Responsive - Tablet Ekranları */
+/* Tablet Ekranları İçin Sidebar */
+@media (max-width: 768px) {
+  /* Küçük ekranlar için menü genişliğini azaltıyoruz */
+  .sideMenu {
+    width: 60vw;
+  }
+
+  .sub-menu {
+    width: 70vw;
+  }
+
+  .hover-image {
+    left: calc(60vw + 30px); /* Hovered image'in konumunu güncelledik */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobil cihazlar için daha da küçük boyutlar */
+  .sideMenu {
+    width: 80vw;
+  }
+
+  .sub-menu {
+    width: 90vw;
+  }
+
+  .hover-image {
+    left: calc(80vw + 20px); /* Yine hover image konumunu güncelledik */
+  }
+}
